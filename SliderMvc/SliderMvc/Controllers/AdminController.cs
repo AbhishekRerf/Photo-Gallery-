@@ -15,7 +15,9 @@ namespace Project.Controllers
 {
     
     [Authorize]
-
+    ///
+    /// Admin controller
+    ///
     public class AdminController : Controller
     {
         PhotoGalleryEntities db0 = new PhotoGalleryEntities();
