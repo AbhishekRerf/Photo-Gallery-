@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SliderMvc.Models.Gallery>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<br />
+<br />
+@Html.Partial("~/Views/Shared/SliderPartial.cshtml", Model)
+
+<body>
+    <h2 style="text-align:center">Our Most Popular Picks</h2>
+    <div class="row">
+        <div class="column">
+            <a href="Home/Image?category=Nature">
+                <img src="~/Content/Pictures/Landscape.jpg" width="100%;">
+                <h4 style="text-align:center">Nature</h4>
+            </a>
+        </div>
+
+        <div class="column">
+            <a href="Home/Image?category=Water">
+                <img src="~/Content/Pictures/water (2).jpg" width="100%;">
+                <h4 style="text-align:center">Water</h4>
+            </a>
+        </div>
+
+        <div class="column">
+            <a href="Home/Image?category=Sky">
+                <img src="~/Content/Pictures/sky.jpg" width="100%;">
+                <h4 style="text-align:center">Sky</h4>
+            </a>
+        </div>
+
+
+    </div>
+    <h2 style="text-align:center">Participate In Our Contests</h2>
+    <a href="Home/Contests">
+        <img src="~/Content/Pictures/Contest.png" height="400" width="100%" style="border:2px solid black">
+
+    </a>
+
+</body>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>

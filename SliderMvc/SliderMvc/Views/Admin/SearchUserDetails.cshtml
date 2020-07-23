@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SliderMvc.Models.UserDetail>
+
+@{
+    ViewBag.Title = "SearchUserDetails";
+}
+
+<h2 style="text-align:center">User Details</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.full_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mobile_no)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.full_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobile_no)
+        </td>
+       
+        <td>
+            
+            @Html.ActionLink("Make Him/Her Winner", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

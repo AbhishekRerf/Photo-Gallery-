@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SliderMvc.Models.Image_Admin_>
+
+@{
+    ViewBag.Title = "Image";
+}
+
+
+
+
+<table class="table">
+   
+
+@foreach (var item in Model) {
+    <tr>
+        
+      
+            <img src="@Url.Content(item.ImagePath)" height="300" width="300" style="padding:12px 12px;margin-left:40px;margin-top:15px;border:2px solid black;" />
+        
+       
+    </tr>
+}
+
+</table>

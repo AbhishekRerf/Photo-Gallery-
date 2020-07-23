@@ -1,0 +1,52 @@
+﻿@model SliderMvc.Models.Image_Admin_
+
+@{
+    ViewBag.Title = "edit";
+}
+
+<h2>edit</h2>
+@Html.Raw(TempData["EditMessage"])
+@Html.Raw( TempData["EditMessageFailed"])
+
+@Html.Raw(TempData["SizeMessage"])
+@Html.Raw(TempData["ExtensionMessage"])
+
+@using (Html.BeginForm("edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ImageDetails_Admin_</h4>
+        <hr />
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Categories, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Categories, new SelectList(new[] { "Wallpapers", "Featured", "Mobile Clicks", "Nature", "Animals", "Birds", "Foods", "Gods", "Water/Sea", "Sky/Space", "Portraits", "Black And White", "Cars", "Architectural", "Festivals", "Cricketers", "Footballer", "Others" }), "Select Categories", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Categories, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <img src="@Url.Content(Session["Image"].ToString())" height="80" width="80" />
+                <br />
+                <input type="file" name="ImageFile" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

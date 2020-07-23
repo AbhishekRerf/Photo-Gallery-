@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SliderMvc.Models.ContestImage>
+
+@{
+    ViewBag.Title = "ManageContestImage";
+}
+
+<h2 style="text-align:center">Manage Images Uploaded By Users For Contest</h2>
+<hr class="new1" />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userid)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model=>model.ImagePath)
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.userid)
+            </td>
+
+            <td>
+                <img src="@Url.Content(item.ImagePath)" height="200" width="380" />
+
+            </td>
+           
+            @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>*@
+</tr>
+    }
+
+</table>
+
+
+<style>
+    .new1{
+         border-top: 2px solid black;
+    }
+</style>

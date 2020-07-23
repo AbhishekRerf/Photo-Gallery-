@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SliderMvc/SliderMvc/obj/Debug
+/SliderMvc/SliderMvc/bin
+/SliderMvc/packages/WebGrease.1.5.2
+/SliderMvc/packages/Newtonsoft.Json.6.0.4
+/SliderMvc/packages/Microsoft.Web.Infrastructure.1.0.0.0
+/SliderMvc/packages/Microsoft.AspNet.WebPages.3.2.3
+/SliderMvc/packages/Microsoft.AspNet.Web.Optimization.1.1.3
+/SliderMvc/packages/Microsoft.AspNet.Razor.3.2.3
+/SliderMvc/packages/Microsoft.AspNet.Mvc.5.2.3
+/SliderMvc/packages/EntityFramework.6.1.3
+/SliderMvc/packages/Antlr.3.4.1.9004

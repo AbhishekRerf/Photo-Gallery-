@@ -1,0 +1,49 @@
+﻿@model SliderMvc.Models.Image_Admin_
+
+
+
+<h2 style="text-align:center">Upload Images</h2>
+@Html.Raw(TempData["ErrorMessage"])
+@Html.Raw(TempData["SizeMessage"])
+@Html.Raw(TempData["ExtensionMessage"])
+@Html.Raw(TempData["CreateMessage"])
+@Html.Raw(TempData["RequiredMessage"])
+
+
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4 style="text-align:center">Upload Your Favourite And Best Photos</h4>
+        <hr />
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Categories, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Categories, new SelectList(new[] { "Wallpapers", "Featured", "Mobile Clicks", "Nature", "Animals","Village", "Birds", "Foods", "Gods","Technology", "Sea", "Sky","City", "Portraits", "Black And White", "Cars", "Architectural", "Festivals", "Cricketers", "Footballer","Forest","Historic","Actors", "Others" }), "Select Categories", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Categories, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="ImageFile" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

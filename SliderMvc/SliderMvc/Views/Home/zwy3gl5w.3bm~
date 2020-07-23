@@ -1,0 +1,74 @@
+﻿@model SliderMvc.Models.UserDetail
+@{
+    ViewBag.Title = "AdminDashBoard";
+}
+
+    
+
+    <h2 style="text-align:center">Dashboard </h2>
+@*<h4>
+        @Html.ActionLink("Add Image In Slider", "AddImage", "Slider", new { id = "linkAddimage" }, null)
+        <br />
+        @Html.ActionLink("Delete Image From Slider", "DeleteImages", "Slider", new { id = "linkDeleteImage" }, null)
+        <br />
+        @Html.ActionLink("Add Image In Website", "Create","Admin")
+        <br />
+        @Html.ActionLink("Manage Website Images(Edit/Delete)", "Index", "Admin")
+    </h4>*@
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Add Image In Slider", "AddImage", "Slider", new { id = "linkAddimage" }, null)
+        </th>
+
+        <th>
+            @Html.ActionLink("Delete Image From Slider", "DeleteImages", "Slider", new { id = "linkDeleteImage" }, null)
+        </th>
+
+        <th>
+            @Html.ActionLink("Add Image In Website", "Create", "Admin")
+        </th>
+
+        <th>
+            @Html.ActionLink("Manage Website Images(Edit/Delete)", "Index", "Admin")
+        </th>
+
+        <th>
+            @Html.ActionLink("Watch Contest Images", "ManageContestImage", "Admin")
+        </th>
+    </tr>
+</table>
+
+<br />
+<br />
+<br />
+<br />
+<hr />
+<h3 style="text-align:center">Check User Details For Winner List Purpose</h3>
+<div class="form-horizontal">
+    @using (Html.BeginForm("SearchUserDetails", "Admin", FormMethod.Post))
+    {
+        <br />
+        <br>
+        <label>Enter User Id </label>
+        @Html.TextBoxFor(model => model.id, new { htmlAttributes = new { @class = "form-control" } })
+        <br /> <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn" />
+            </div>
+        </div>
+    }
+</div>
+    <style>
+       
+        .form-horizontal {
+       margin-left: 30%;
+    }
+         .btn {
+        margin-left: -45px;
+    }
+    </style>

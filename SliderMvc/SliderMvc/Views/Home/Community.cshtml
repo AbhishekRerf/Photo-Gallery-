@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SliderMvc.Models.ImageByUser>
+
+@{
+    ViewBag.Title = "Community";
+}
+
+<br />
+
+
+<table class="table">
+    
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            <label>Uploaded By : @Html.DisplayFor(modelItem => item.user_name) </label>
+        </td>
+        <td>
+            <img src="@Url.Content(item.ImagePath)" height="300" width="320" style="padding:12px 12px;margin-left:40px;margin-top:15px;border:2px solid black;" />
+        </td>
+       
+    </tr>
+}
+
+</table>

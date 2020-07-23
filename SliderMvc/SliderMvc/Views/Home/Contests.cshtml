@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Contests";
+}
+@using (Html.BeginForm("ParticipateinContest", "Home", FormMethod.Post))
+{
+    <style>
+        hr.new1 {
+            border-top: 1px solid black;
+        }
+
+        .button {
+            background-color: #333333;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top:25px;
+            margin-left: 460px;
+        }
+
+        .button2 {
+            background-color: #333333;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 460px;
+            
+        }
+    </style>
+    <h2 style="text-align:center">Contests Rules</h2>
+    <hr class="new1">
+    <p>Please read these rules (the Rules) before submitting your photo(s) to Better Photography’s contest. These are General Rules governing all contests hosted by Better Photography, unless so specified in the Specific Rules that may be applicable to individual contests. By participating in the contests, you understand, acknowledge and unconditionally agree to abide by the following Rules:</p>
+
+    <h2 style="text-align:center">BASIC SUBMISSIONS GUIDELINES FOR PHOTOGRAPHS</h2>
+    <p>
+        1. The contests are open for online submissions only, through the contest page available on betterphotography.in/contests.<br />
+        2. Submissions will not be accepted once the deadline lapses.<br />
+        3. Photos submitted must be at least 640 pixels on the shorter side, and no more than 2000 pixels on the longer side. Images should be no larger than 2MB. Photos must be in JPEG format.<br />
+        4. You may submit as many entries per contest as you wish, unless specifically mentioned otherwise in the contest specific rules. However, you will be able to upload only one image at a time using the websites upload function.<br />
+        5. You are required to provide a unique title & description for each image submitted.<br />
+        6. The same photo can be submitted for more than one contest. Photos that have won previous awards, including Better Photography’s prior contests, may be submitted again, unless otherwise mentioned in the contest specific rules.<br />
+        7. All submitted photos must contain the original EXIF metadata information. However there must be no border(s), logo(s), copyright marks, identifying marks, or any other visible references and/or marks on the image.<br />
+        8. Basic editing, including colour enhancement, the use of filters, and cropping of the Photo(s) is acceptable, provided any such editing does not affect the authenticity and/or genuineness of the Photo(s).<br />
+        9. Advanced editing used to create illusions, deceptions and/or manipulations, and the adding and removing of significant elements within the frame is prohibited.<br />
+        10. Every image uploaded is subject to a moderation process before it becomes visible on the contest page. Better Photography reserves the right to assess and disregard any submitted photo at our its discretion.<br />
+        11. Photos that portray or otherwise include inappropriate and/or offensive content, including provocative nudity, violence, human rights and/or environmental violation, and/or any other contents deemed to be contrary to the law, religious, cultural & moral traditions and practices of India, are strictly prohibited and will be immediately discarded.
+        12. A participant who submits any such photos may be permanently banned, subject to Better Photography’s discretion, from participating in any future contests.<br />
+    </p>
+
+    <h2 style="text-align:center"> THE JUDGING</h2>
+
+    <p>
+        1. Better Photography will appoint a judge / judges for each contest. This will comprise of members of the editorial team and / or external judges.<br />
+        2. The judging panel shall assess and determine the winning Photos. The results and the winners will be announced on the website.<br />
+        3. The decision of Better Photography’s judging panel will be final and binding on all Participants in respect to all matters relating to the Contest.<br />
+        4. Better Photography reserves the right to call for original JPEG or RAW files with unchanged EXIF for the purpose of authentication. An image maybe disregarded if this information cannot be provided.<br />
+    </p>
+    <input type="submit" value="Participate In Contest" class="button" />
+
+}
+<br />
+<br />
+@using (Html.BeginForm("ContestImages", "Home", FormMethod.Post))
+{
+    <input type="submit" value="Watch Contest Image" class="button2" />
+}
+
